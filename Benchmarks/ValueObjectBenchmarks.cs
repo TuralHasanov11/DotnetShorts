@@ -140,13 +140,13 @@ public readonly struct UserIdStruct : IEquatable<UserIdStruct>
 
     public static bool operator !=(UserIdStruct left, UserIdStruct right) => !left.Equals(right);
 
-    public static bool operator ==(UserIdStruct left, string right) => left.Equals(right);
+    public static bool operator ==(UserIdStruct left, Guid right) => left.Equals(right);
 
-    public static bool operator !=(UserIdStruct left, string right) => !left.Equals(right);
+    public static bool operator !=(UserIdStruct left, Guid right) => !left.Equals(right);
 
-    public static bool operator ==(string left, UserIdStruct right) => right.Equals(left);
+    public static bool operator ==(Guid left, UserIdStruct right) => right.Equals(left);
 
-    public static bool operator !=(string left, UserIdStruct right) => !right.Equals(left);
+    public static bool operator !=(Guid left, UserIdStruct right) => !right.Equals(left);
 
     public readonly bool Equals(UserIdStruct other)
     {
@@ -155,8 +155,7 @@ public readonly struct UserIdStruct : IEquatable<UserIdStruct>
 
     public readonly bool Equals(Guid primitive) => Value == primitive;
 
-    public override readonly bool Equals(object? obj)
-        => obj is UserIdStruct other && Equals(other);
+    public override readonly bool Equals(object? obj) => obj is UserIdStruct other && Equals(other);
 
     public override readonly int GetHashCode() => Value.GetHashCode();
 
@@ -179,13 +178,13 @@ public sealed record AgeRecord
 
     public static implicit operator int(AgeRecord age) => age.Value;
 
-    public static bool operator ==(AgeRecord left, string right) => left.Equals(right);
+    public static bool operator ==(AgeRecord left, int right) => left.Equals(right);
 
-    public static bool operator !=(AgeRecord left, string right) => !left.Equals(right);
+    public static bool operator !=(AgeRecord left, int right) => !left.Equals(right);
 
-    public static bool operator ==(string left, AgeRecord right) => right.Equals(left);
+    public static bool operator ==(int left, AgeRecord right) => right.Equals(left);
 
-    public static bool operator !=(string left, AgeRecord right) => !right.Equals(left);
+    public static bool operator !=(int left, AgeRecord right) => !right.Equals(left);
 }
 
 
@@ -209,13 +208,13 @@ public readonly struct AgeStruct : IEquatable<AgeStruct>
 
     public static bool operator !=(AgeStruct left, AgeStruct right) => !left.Equals(right);
 
-    public static bool operator ==(AgeStruct left, string right) => left.Equals(right);
+    public static bool operator ==(AgeStruct left, int right) => left.Equals(right);
 
-    public static bool operator !=(AgeStruct left, string right) => !left.Equals(right);
+    public static bool operator !=(AgeStruct left, int right) => !left.Equals(right);
 
-    public static bool operator ==(string left, AgeStruct right) => right.Equals(left);
+    public static bool operator ==(int left, AgeStruct right) => right.Equals(left);
 
-    public static bool operator !=(string left, AgeStruct right) => !right.Equals(left);
+    public static bool operator !=(int left, AgeStruct right) => !right.Equals(left);
 
     public readonly bool Equals(AgeStruct other)
     {
